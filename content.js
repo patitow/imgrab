@@ -60,9 +60,8 @@
   // Restrições de tamanho e domínio (não valem para o Hover Hotkey, exceto domínios).
   function passes(f) {
     const r = f.el.getBoundingClientRect();
-    const w = f.el.naturalWidth || r.width;
-    const h = f.el.naturalHeight || r.height;
-    if (w < S.minSize || h < S.minSize) return false;
+    // Tamanho exibido, não o natural: ícones de interface costumam ser arquivos grandes mostrados pequenos.
+    if (r.width < S.minSize || r.height < S.minSize) return false;
     if (!listAllows(S.pageMode, S.pageDomains, location.hostname)) return false;
     try {
       const u = new URL(f.url, location.href);
