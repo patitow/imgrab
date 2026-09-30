@@ -263,12 +263,6 @@
   "triggerNote": {
     "message": "Com clique direito como gatilho, o menu do navegador some sobre imagens."
   },
-  "aggressive": {
-    "message": "Rastrear o cursor agressivamente"
-  },
-  "aggressiveNote": {
-    "message": "Ajuda a detectar imagens cobertas por overlays (botão e Hover Hotkey)."
-  },
   "saved": {
     "message": "Salvo ✓"
   }

@@ -263,12 +263,6 @@
   "triggerNote": {
     "message": "With right click as the trigger, the browser menu is suppressed on images."
   },
-  "aggressive": {
-    "message": "Aggressively track the cursor"
-  },
-  "aggressiveNote": {
-    "message": "Helps detect images covered by overlays (button and Hover Hotkey)."
-  },
   "saved": {
     "message": "Saved ✓"
   }

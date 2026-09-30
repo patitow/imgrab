@@ -104,7 +104,7 @@
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      if (hoverImg) download({ url: hoverImg.currentSrc || hoverImg.src, el: hoverImg });
+      if (hoverF) download(hoverF);
     });
     btn.addEventListener("dragenter", (e) => {
       if (!S.hoverDrop) return;
@@ -122,8 +122,8 @@
       const dt = e.dataTransfer;
       const uri = (dt.getData("text/uri-list") || "").split("\n").find((l) => l && !l.startsWith("#"));
       const text = (dt.getData("text/plain") || "").trim();
-      const url = uri || (/^(https?:|data:image)/.test(text) ? text : null) || (hoverImg && (hoverImg.currentSrc || hoverImg.src));
-      if (url) download({ url, el: hoverImg });
+      const url = uri || (/^(https?:|data:image)/.test(text) ? text : null) || (hoverF && hoverF.url);
+      if (url) download({ url, el: hoverF && hoverF.el });
     });
   }
 
@@ -172,7 +172,9 @@
   }
 
   // ---------- Botão ao passar o mouse ----------
-  let hoverImg = null;
+  // Detecta pela pilha de elementos sob o cursor (elementsFromPoint), não só pelo alvo do mouse:
+  // sites como o X cobrem as imagens com camadas transparentes.
+  let hoverF = null;
   let hideTimer;
   const scheduleHide = () => {
     clearTimeout(hideTimer);
@@ -180,14 +182,12 @@
     hideTimer = setTimeout(() => btn && (btn.style.display = "none"), 400);
   };
 
-  function showButtonFor(img) {
-    if (!S.hoverEnabled || !alive()) return;
-    const f = { url: img.currentSrc || img.src, el: img };
-    if (!f.url || !passes(f)) return;
+  function showButtonFor(f) {
+    if (!S.hoverEnabled || !alive() || !passes(f)) return;
     ensureHost();
-    hoverImg = img;
+    hoverF = f;
     clearTimeout(hideTimer);
-    const r = img.getBoundingClientRect();
+    const r = f.el.getBoundingClientRect();
     const L = Math.max(r.left, 0), T = Math.max(r.top, 0);
     const R = Math.min(r.right, innerWidth), B = Math.min(r.bottom, innerHeight);
     const size = S.hoverSize, pad = 6;
@@ -218,14 +218,6 @@
       if (e.target === host) return;
       lastTarget = e.target;
       inside = true;
-      if (e.target instanceof HTMLImageElement) showButtonFor(e.target);
-    },
-    true
-  );
-  document.addEventListener(
-    "mouseout",
-    (e) => {
-      if (e.target === hoverImg) scheduleHide();
     },
     true
   );
@@ -235,11 +227,13 @@
       lastX = e.clientX;
       lastY = e.clientY;
       inside = true;
-      if (!S.aggressive || !S.hoverEnabled || raf) return;
+      if (!S.hoverEnabled || raf) return;
       raf = requestAnimationFrame(() => {
         raf = 0;
+        if (!alive()) return;
         const f = findImage(lastX, lastY, lastTarget);
-        if (f && f.el.tagName === "IMG") showButtonFor(f.el);
+        if (f && passes(f)) showButtonFor(f);
+        else scheduleHide();
       });
     },
     { capture: true, passive: true }
@@ -312,7 +306,7 @@
         toast(msg.text, msg.kind);
       } else if (msg.type === "hotkey") {
         if (!inside) return;
-        const f = S.aggressive ? findImage(lastX, lastY, lastTarget) : imageOf(lastTarget);
+        const f = findImage(lastX, lastY, lastTarget);
         if (f && f.url) download(f);
       } else if (msg.type === "getSelectionImages") {
         const sel = getSelection();

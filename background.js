@@ -149,7 +149,20 @@ async function notify(title, message) {
   } catch {}
 }
 
+// X/Twitter serve miniaturas por padrão (name=small/large); pede a original.
+function upgradeUrl(url) {
+  try {
+    const u = new URL(url);
+    if (u.hostname === "pbs.twimg.com" && u.pathname.startsWith("/media/") && u.searchParams.get("name") !== "orig") {
+      u.searchParams.set("name", "orig");
+      return u.href;
+    }
+  } catch {}
+  return url;
+}
+
 async function runDownload(url, pageUrl, title) {
+  url = upgradeUrl(url);
   const s = await getSettings();
   const counter = s.renameEnabled && s.pattern.includes("%counter%") ? await nextCounter(s) : "";
   const filename = renderFilename(s, { url, pageUrl, title, counter });

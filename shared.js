@@ -29,7 +29,6 @@ const DEFAULTS = {
   conflict: "uniquify",
   trigger: "disabled",
   triggerDelay: 250,
-  aggressive: false,
 };
 
 const sanitizeSeg = (s) =>
