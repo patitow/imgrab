@@ -1,0 +1,275 @@
+{
+  "extName": {
+    "message": "Imgrab"
+  },
+  "extDescription": {
+    "message": "Download images with one click — even from sites that block hotlinking. Hover button, right-click menu and hotkey."
+  },
+  "cmdHotkey": {
+    "message": "Download the image under the cursor (Hover Hotkey)"
+  },
+  "menuImage": {
+    "message": "Download image"
+  },
+  "menuSelection": {
+    "message": "Download images"
+  },
+  "toastDownloading": {
+    "message": "Downloading…"
+  },
+  "toastDone": {
+    "message": "Image downloaded"
+  },
+  "toastFailed": {
+    "message": "Failed: $ERROR$",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastStale": {
+    "message": "Extension was updated — reload the page (F5)"
+  },
+  "toastNoImages": {
+    "message": "No images in the selection"
+  },
+  "toastBatch": {
+    "message": "$OK$/$TOTAL$ images downloaded",
+    "placeholders": {
+      "ok": {
+        "content": "$1"
+      },
+      "total": {
+        "content": "$2"
+      }
+    }
+  },
+  "notifDoneTitle": {
+    "message": "Download complete"
+  },
+  "notifFailTitle": {
+    "message": "Download failed"
+  },
+  "errCanceled": {
+    "message": "canceled"
+  },
+  "errInterrupted": {
+    "message": "interrupted"
+  },
+  "errNotImage": {
+    "message": "response is not an image ($TYPE$)",
+    "placeholders": {
+      "type": {
+        "content": "$1"
+      }
+    }
+  },
+  "errFetch": {
+    "message": "fetch failed"
+  },
+  "errUnknown": {
+    "message": "unknown error"
+  },
+  "optionsTitle": {
+    "message": "Imgrab Options"
+  },
+  "h_general": {
+    "message": "General"
+  },
+  "notify": {
+    "message": "Notify when the download completes"
+  },
+  "greyOut": {
+    "message": "Grey out the image during download"
+  },
+  "hotkeyPre": {
+    "message": "Hover Hotkey: set it at"
+  },
+  "hotkeyPost": {
+    "message": "(default Alt+Shift+D). Downloads the image under the cursor."
+  },
+  "h_context": {
+    "message": "Context menu"
+  },
+  "ctxImage": {
+    "message": "Show \"Download image\" on images"
+  },
+  "ctxSelection": {
+    "message": "Show \"Download images\" on selections"
+  },
+  "h_restrictions": {
+    "message": "Restrictions"
+  },
+  "restrictNote": {
+    "message": "Size and Shift do not restrict the Hover Hotkey."
+  },
+  "requireShift": {
+    "message": "Require Shift to be pressed (mouse triggers)"
+  },
+  "minSizePre": {
+    "message": "Ignore images smaller than"
+  },
+  "minSizePost": {
+    "message": "pixels (either side)"
+  },
+  "pageDomains": {
+    "message": "Page domains"
+  },
+  "imageDomains": {
+    "message": "Image domains"
+  },
+  "modeBlacklist": {
+    "message": "blacklist (ignore)"
+  },
+  "modeWhitelist": {
+    "message": "whitelist (only)"
+  },
+  "domainsHint": {
+    "message": "One per line. * matches one level; domains must match entirely. Empty list = no restriction."
+  },
+  "h_hover": {
+    "message": "Hover button"
+  },
+  "hoverEnabled": {
+    "message": "Enabled"
+  },
+  "hoverDrop": {
+    "message": "Allow dragging an image onto the button"
+  },
+  "skin": {
+    "message": "Skin"
+  },
+  "skinOriginal": {
+    "message": "Original"
+  },
+  "skinAlt": {
+    "message": "Alternative"
+  },
+  "size": {
+    "message": "Size"
+  },
+  "opacity": {
+    "message": "Opacity"
+  },
+  "hoverPersist": {
+    "message": "Keep the button after the mouse leaves the image"
+  },
+  "position": {
+    "message": "Position"
+  },
+  "posTL": {
+    "message": "Top left"
+  },
+  "posTR": {
+    "message": "Top right"
+  },
+  "posBL": {
+    "message": "Bottom left"
+  },
+  "posBR": {
+    "message": "Bottom right"
+  },
+  "posC": {
+    "message": "Center"
+  },
+  "h_dest": {
+    "message": "Destination"
+  },
+  "folder": {
+    "message": "Sub-folder inside Downloads"
+  },
+  "folderPh": {
+    "message": "empty = root"
+  },
+  "renameEnabled": {
+    "message": "Enable file renaming"
+  },
+  "pattern": {
+    "message": "Pattern"
+  },
+  "preview": {
+    "message": "Preview"
+  },
+  "tokOriginal": {
+    "message": "Original file name (without extension; the extension is kept)"
+  },
+  "tokCounter": {
+    "message": "Numeric counter. Restarts each browser session."
+  },
+  "tokPageDomain": {
+    "message": "Page domain"
+  },
+  "tokPageDirs": {
+    "message": "Page folder path (with / or .)"
+  },
+  "tokImageDomain": {
+    "message": "Image domain"
+  },
+  "tokImageDirs": {
+    "message": "Image folder path (with / or .)"
+  },
+  "tokDate": {
+    "message": "Year, month, day, hour, minute, second, millisecond"
+  },
+  "tokTitle": {
+    "message": "Page title. Any / creates a sub-folder!"
+  },
+  "counterStart": {
+    "message": "Counter start"
+  },
+  "counterStep": {
+    "message": "Step"
+  },
+  "counterDigits": {
+    "message": "Digits"
+  },
+  "h_advanced": {
+    "message": "Advanced"
+  },
+  "conflict": {
+    "message": "When the file name already exists"
+  },
+  "conflictUniq": {
+    "message": "make it unique automatically"
+  },
+  "conflictPrompt": {
+    "message": "\"Save As\" dialog"
+  },
+  "conflictOver": {
+    "message": "overwrite (at your own risk!)"
+  },
+  "trigger": {
+    "message": "Mouse trigger"
+  },
+  "trigDisabled": {
+    "message": "disabled"
+  },
+  "trigSingleLeft": {
+    "message": "single left click"
+  },
+  "trigDoubleLeft": {
+    "message": "double left click"
+  },
+  "trigSingleRight": {
+    "message": "single right click"
+  },
+  "trigDoubleRight": {
+    "message": "double right click"
+  },
+  "triggerDelay": {
+    "message": "double-click interval"
+  },
+  "triggerNote": {
+    "message": "With right click as the trigger, the browser menu is suppressed on images."
+  },
+  "aggressive": {
+    "message": "Aggressively track the cursor"
+  },
+  "aggressiveNote": {
+    "message": "Helps detect images covered by overlays (button and Hover Hotkey)."
+  },
+  "saved": {
+    "message": "Saved ✓"
+  }
+}

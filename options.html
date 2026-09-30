@@ -1,0 +1,100 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Imgrab</title>
+<style>
+  body{font:14px system-ui,sans-serif;max-width:720px;margin:24px auto;padding:0 16px;color:#222}
+  h2{margin:28px 0 8px;border-bottom:1px solid #ccc;padding-bottom:4px;font-size:16px}
+  label{display:block;margin:8px 0}
+  .row{display:flex;gap:8px;align-items:center;margin:8px 0;flex-wrap:wrap}
+  input[type=number]{width:80px}
+  textarea{width:100%;height:80px;box-sizing:border-box;font-family:monospace}
+  input[type=text]{width:100%;box-sizing:border-box}
+  small,.hint{color:#666;font-size:12px}
+  table{border-collapse:collapse;margin:8px 0}td{padding:2px 12px 2px 0;font-size:12px;vertical-align:top}
+  code{background:#eee;padding:0 4px;border-radius:3px}
+  #saved{position:fixed;top:8px;right:16px;color:#1b6e3c;opacity:0;transition:opacity .2s}
+  #saved.on{opacity:1}
+</style>
+<span id="saved" data-i18n="saved"></span>
+
+<h2 data-i18n="h_general"></h2>
+<label><input type="checkbox" data-key="notify"> <span data-i18n="notify"></span></label>
+<label><input type="checkbox" data-key="greyOut"> <span data-i18n="greyOut"></span></label>
+<div class="hint"><span data-i18n="hotkeyPre"></span> <code id="shortcutsUrl"></code> <span data-i18n="hotkeyPost"></span></div>
+
+<h2 data-i18n="h_context"></h2>
+<label><input type="checkbox" data-key="ctxImage"> <span data-i18n="ctxImage"></span></label>
+<label><input type="checkbox" data-key="ctxSelection"> <span data-i18n="ctxSelection"></span></label>
+
+<h2 data-i18n="h_restrictions"></h2>
+<small data-i18n="restrictNote"></small>
+<label><input type="checkbox" data-key="requireShift"> <span data-i18n="requireShift"></span></label>
+<div class="row"><span data-i18n="minSizePre"></span> <input type="number" data-key="minSize" min="0"> <span data-i18n="minSizePost"></span></div>
+<div class="row"><b data-i18n="pageDomains"></b>
+  <select data-key="pageMode"><option value="blacklist" data-i18n="modeBlacklist"></option><option value="whitelist" data-i18n="modeWhitelist"></option></select></div>
+<textarea data-key="pageDomains" placeholder="example.com&#10;*.example.net&#10;localhost"></textarea>
+<div class="row"><b data-i18n="imageDomains"></b>
+  <select data-key="imageMode"><option value="blacklist" data-i18n="modeBlacklist"></option><option value="whitelist" data-i18n="modeWhitelist"></option></select></div>
+<textarea data-key="imageDomains" placeholder="example.com&#10;*.example.net&#10;localhost"></textarea>
+<small data-i18n="domainsHint"></small>
+
+<h2 data-i18n="h_hover"></h2>
+<label><input type="checkbox" data-key="hoverEnabled"> <span data-i18n="hoverEnabled"></span></label>
+<label><input type="checkbox" data-key="hoverDrop"> <span data-i18n="hoverDrop"></span></label>
+<div class="row"><span data-i18n="skin"></span>
+  <select data-key="hoverSkin"><option value="original" data-i18n="skinOriginal"></option><option value="alt" data-i18n="skinAlt"></option></select>
+  <span data-i18n="size"></span> <input type="number" data-key="hoverSize" min="16" max="128"> px
+  <span data-i18n="opacity"></span> <input type="number" data-key="hoverOpacity" min="5" max="100"> %
+</div>
+<label><input type="checkbox" data-key="hoverPersist"> <span data-i18n="hoverPersist"></span></label>
+<div class="row"><span data-i18n="position"></span>
+  <select data-key="hoverPos">
+    <option value="top-left" data-i18n="posTL"></option><option value="top-right" data-i18n="posTR"></option>
+    <option value="bottom-left" data-i18n="posBL"></option><option value="bottom-right" data-i18n="posBR"></option>
+    <option value="center" data-i18n="posC"></option>
+  </select>
+</div>
+
+<h2 data-i18n="h_dest"></h2>
+<div class="row"><span data-i18n="folder"></span> <input type="text" data-key="folder" data-i18n-placeholder="folderPh"></div>
+<label><input type="checkbox" data-key="renameEnabled"> <span data-i18n="renameEnabled"></span></label>
+<div class="row"><span data-i18n="pattern"></span> <input type="text" data-key="pattern"></div>
+<div class="hint"><span data-i18n="preview"></span>: <b id="p1"></b> · <b id="p2"></b></div>
+<table>
+  <tr><td><code>%original%</code></td><td data-i18n="tokOriginal"></td></tr>
+  <tr><td><code>%counter%</code></td><td data-i18n="tokCounter"></td></tr>
+  <tr><td><code>%pagedomain%</code></td><td data-i18n="tokPageDomain"></td></tr>
+  <tr><td><code>%pagedirs%</code> / <code>%pagepath%</code></td><td data-i18n="tokPageDirs"></td></tr>
+  <tr><td><code>%imagedomain%</code></td><td data-i18n="tokImageDomain"></td></tr>
+  <tr><td><code>%imagedirs%</code> / <code>%imagepath%</code></td><td data-i18n="tokImageDirs"></td></tr>
+  <tr><td><code>%y% %M% %d% %h% %m% %s% %ms%</code></td><td data-i18n="tokDate"></td></tr>
+  <tr><td><code>%title%</code></td><td data-i18n="tokTitle"></td></tr>
+</table>
+<div class="row"><span data-i18n="counterStart"></span> <input type="number" data-key="counterStart">
+  <span data-i18n="counterStep"></span> <input type="number" data-key="counterStep">
+  <span data-i18n="counterDigits"></span> <input type="number" data-key="counterDigits" min="1"></div>
+
+<h2 data-i18n="h_advanced"></h2>
+<div class="row"><span data-i18n="conflict"></span>
+  <select data-key="conflict">
+    <option value="uniquify" data-i18n="conflictUniq"></option>
+    <option value="prompt" data-i18n="conflictPrompt"></option>
+    <option value="overwrite" data-i18n="conflictOver"></option>
+  </select>
+</div>
+<div class="row"><span data-i18n="trigger"></span>
+  <select data-key="trigger">
+    <option value="disabled" data-i18n="trigDisabled"></option>
+    <option value="single-left" data-i18n="trigSingleLeft"></option>
+    <option value="double-left" data-i18n="trigDoubleLeft"></option>
+    <option value="single-right" data-i18n="trigSingleRight"></option>
+    <option value="double-right" data-i18n="trigDoubleRight"></option>
+  </select>
+  <span data-i18n="triggerDelay"></span> <input type="number" data-key="triggerDelay" min="50"> ms
+</div>
+<small data-i18n="triggerNote"></small>
+<label><input type="checkbox" data-key="aggressive"> <span data-i18n="aggressive"></span></label>
+<small data-i18n="aggressiveNote"></small>
+
+<script src="shared.js"></script>
+<script src="options.js"></script>

@@ -1,0 +1,23 @@
+# Build output
+dist/
+*.zip
+*.crx
+*.pem
+
+# Dependencies / tooling
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Local / AI tooling
+.claude/
+CLAUDE.md
+*.log
+.env
+.env.*

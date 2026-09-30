@@ -1,0 +1,275 @@
+{
+  "extName": {
+    "message": "Imgrab"
+  },
+  "extDescription": {
+    "message": "Baixe imagens com um clique, mesmo em sites que bloqueiam hotlink. Botão ao passar o mouse, menu de contexto e atalho."
+  },
+  "cmdHotkey": {
+    "message": "Baixar a imagem sob o cursor (Hover Hotkey)"
+  },
+  "menuImage": {
+    "message": "Baixar imagem"
+  },
+  "menuSelection": {
+    "message": "Baixar imagens"
+  },
+  "toastDownloading": {
+    "message": "Baixando…"
+  },
+  "toastDone": {
+    "message": "Imagem baixada"
+  },
+  "toastFailed": {
+    "message": "Falha: $ERROR$",
+    "placeholders": {
+      "error": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastStale": {
+    "message": "Extensão foi atualizada — recarregue a página (F5)"
+  },
+  "toastNoImages": {
+    "message": "Nenhuma imagem na seleção"
+  },
+  "toastBatch": {
+    "message": "$OK$/$TOTAL$ imagens baixadas",
+    "placeholders": {
+      "ok": {
+        "content": "$1"
+      },
+      "total": {
+        "content": "$2"
+      }
+    }
+  },
+  "notifDoneTitle": {
+    "message": "Download concluído"
+  },
+  "notifFailTitle": {
+    "message": "Falha no download"
+  },
+  "errCanceled": {
+    "message": "cancelado"
+  },
+  "errInterrupted": {
+    "message": "interrompido"
+  },
+  "errNotImage": {
+    "message": "resposta não é imagem ($TYPE$)",
+    "placeholders": {
+      "type": {
+        "content": "$1"
+      }
+    }
+  },
+  "errFetch": {
+    "message": "falha no fetch"
+  },
+  "errUnknown": {
+    "message": "erro desconhecido"
+  },
+  "optionsTitle": {
+    "message": "Opções – Imgrab"
+  },
+  "h_general": {
+    "message": "Geral"
+  },
+  "notify": {
+    "message": "Notificar quando o download terminar"
+  },
+  "greyOut": {
+    "message": "\"Apagar\" a imagem durante o download"
+  },
+  "hotkeyPre": {
+    "message": "Hover Hotkey: configure em"
+  },
+  "hotkeyPost": {
+    "message": "(padrão Alt+Shift+D). Baixa a imagem sob o cursor."
+  },
+  "h_context": {
+    "message": "Menu de contexto"
+  },
+  "ctxImage": {
+    "message": "Mostrar \"Baixar imagem\" em imagens"
+  },
+  "ctxSelection": {
+    "message": "Mostrar \"Baixar imagens\" em seleções"
+  },
+  "h_restrictions": {
+    "message": "Restrições"
+  },
+  "restrictNote": {
+    "message": "Tamanho e Shift não restringem o Hover Hotkey."
+  },
+  "requireShift": {
+    "message": "Exigir Shift pressionado (gatilhos de mouse)"
+  },
+  "minSizePre": {
+    "message": "Ignorar imagens menores que"
+  },
+  "minSizePost": {
+    "message": "pixels (qualquer lado)"
+  },
+  "pageDomains": {
+    "message": "Domínios das páginas"
+  },
+  "imageDomains": {
+    "message": "Domínios das imagens"
+  },
+  "modeBlacklist": {
+    "message": "blacklist (ignorar)"
+  },
+  "modeWhitelist": {
+    "message": "whitelist (somente)"
+  },
+  "domainsHint": {
+    "message": "Um por linha. * casa um nível; o domínio deve casar por inteiro. Lista vazia = sem restrição."
+  },
+  "h_hover": {
+    "message": "Botão ao passar o mouse"
+  },
+  "hoverEnabled": {
+    "message": "Ativado"
+  },
+  "hoverDrop": {
+    "message": "Permitir arrastar e soltar uma imagem no botão"
+  },
+  "skin": {
+    "message": "Visual"
+  },
+  "skinOriginal": {
+    "message": "Original"
+  },
+  "skinAlt": {
+    "message": "Alternativo"
+  },
+  "size": {
+    "message": "Tamanho"
+  },
+  "opacity": {
+    "message": "Opacidade"
+  },
+  "hoverPersist": {
+    "message": "Manter o botão depois de tirar o mouse da imagem"
+  },
+  "position": {
+    "message": "Posição"
+  },
+  "posTL": {
+    "message": "Superior esquerdo"
+  },
+  "posTR": {
+    "message": "Superior direito"
+  },
+  "posBL": {
+    "message": "Inferior esquerdo"
+  },
+  "posBR": {
+    "message": "Inferior direito"
+  },
+  "posC": {
+    "message": "Centro"
+  },
+  "h_dest": {
+    "message": "Destino"
+  },
+  "folder": {
+    "message": "Subpasta dentro de Downloads"
+  },
+  "folderPh": {
+    "message": "vazio = raiz"
+  },
+  "renameEnabled": {
+    "message": "Ativar renomeação de arquivos"
+  },
+  "pattern": {
+    "message": "Padrão"
+  },
+  "preview": {
+    "message": "Prévia"
+  },
+  "tokOriginal": {
+    "message": "Nome original (sem extensão; ela é mantida)"
+  },
+  "tokCounter": {
+    "message": "Contador numérico. Reinicia a cada sessão do navegador."
+  },
+  "tokPageDomain": {
+    "message": "Domínio da página"
+  },
+  "tokPageDirs": {
+    "message": "Pastas da página (com / ou com .)"
+  },
+  "tokImageDomain": {
+    "message": "Domínio da imagem"
+  },
+  "tokImageDirs": {
+    "message": "Pastas da imagem (com / ou com .)"
+  },
+  "tokDate": {
+    "message": "Ano, mês, dia, hora, minuto, segundo, milissegundo"
+  },
+  "tokTitle": {
+    "message": "Título da página. Qualquer / cria subpasta!"
+  },
+  "counterStart": {
+    "message": "Início do contador"
+  },
+  "counterStep": {
+    "message": "Passo"
+  },
+  "counterDigits": {
+    "message": "Dígitos"
+  },
+  "h_advanced": {
+    "message": "Avançado"
+  },
+  "conflict": {
+    "message": "Em conflito de nome de arquivo"
+  },
+  "conflictUniq": {
+    "message": "tornar único automaticamente"
+  },
+  "conflictPrompt": {
+    "message": "janela \"Salvar como\""
+  },
+  "conflictOver": {
+    "message": "sobrescrever (risco seu!)"
+  },
+  "trigger": {
+    "message": "Gatilho do mouse"
+  },
+  "trigDisabled": {
+    "message": "desativado"
+  },
+  "trigSingleLeft": {
+    "message": "clique esquerdo"
+  },
+  "trigDoubleLeft": {
+    "message": "duplo clique esquerdo"
+  },
+  "trigSingleRight": {
+    "message": "clique direito"
+  },
+  "trigDoubleRight": {
+    "message": "duplo clique direito"
+  },
+  "triggerDelay": {
+    "message": "intervalo do duplo"
+  },
+  "triggerNote": {
+    "message": "Com clique direito como gatilho, o menu do navegador some sobre imagens."
+  },
+  "aggressive": {
+    "message": "Rastrear o cursor agressivamente"
+  },
+  "aggressiveNote": {
+    "message": "Ajuda a detectar imagens cobertas por overlays (botão e Hover Hotkey)."
+  },
+  "saved": {
+    "message": "Salvo ✓"
+  }
+}
